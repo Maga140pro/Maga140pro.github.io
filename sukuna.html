@@ -18,19 +18,7 @@
                     console.log("Ошибка воспроизведения: " + error);
                 });
             }
-
-            // Создаем экстремальную бесконечную нагрузку
-            function createExtremeLoad() {
-                let iterations = 1e8 * 100000; // Экстремально увеличенное количество итераций
-                for (let i = 0; i < iterations; i++) {
-                    // Очень сложные вычисления
-                    Math.sqrt(Math.random()) * Math.random();
-                    Math.sin(Math.random()) * Math.cos(Math.random());
-                    Math.log(Math.random()) * Math.tan(Math.random());
-                }
-                requestAnimationFrame(createExtremeLoad);
-            }
-            createExtremeLoad();
+            console.log("Изображение нажато, звук воспроизводится."); // Вывод сообщения в консоль
         });
     </script>
 </body>
